@@ -23,19 +23,18 @@ export function deactivate() {}
 
 function generateAsciiTree(dirPath: string, prefix: string = ''): string {
     const dirEntries = fs.readdirSync(dirPath, { withFileTypes: true });
-    const entries = dirEntries.filter(entry => entry.name !== 'node_modules').map(entry => ({
-        name: entry.name,
-        isDirectory: entry.isDirectory()
-    }));
+
+    // Filter out unwanted directories
+    const filteredEntries = dirEntries.filter(entry => !['node_modules', '.git','env'].includes(entry.name));
 
     let result = '';
-    entries.forEach((entry, index) => {
-        const isLast = index === entries.length - 1;
+    filteredEntries.forEach((entry, index) => {
+        const isLast = index === filteredEntries.length - 1;
         const newPrefix = prefix + (isLast ? '└── ' : '├── ');
 
         result += newPrefix + entry.name + '\n';
 
-        if (entry.isDirectory) {
+        if (entry.isDirectory()) {
             const childPrefix = prefix + (isLast ? '    ' : '│   ');
             result += generateAsciiTree(path.join(dirPath, entry.name), childPrefix);
         }

@@ -2,11 +2,11 @@
   "name": "codeascii",
   "displayName": "codeascii",
   "description": "Convert project structure to ASCII art.",
-  "version": "0.0.1",
-  "publisher": "your_publisher_name",
+  "version": "0.0.3",
+  "publisher": "pr0biex",
   "repository": {
       "type": "git",
-      "url": "https://github.com/your_github_username/codeascii.git"
+      "url": "https://github.com/AkshatNaruka/codeascii"
   },
   "engines": {
       "vscode": "^1.60.0"
