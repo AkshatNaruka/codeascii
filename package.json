@@ -1,0 +1,36 @@
+{
+  "name": "codeascii",
+  "displayName": "codeascii",
+  "description": "Convert project structure to ASCII art.",
+  "version": "0.0.1",
+  "publisher": "your_publisher_name",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/your_github_username/codeascii.git"
+  },
+  "engines": {
+      "vscode": "^1.60.0"
+  },
+  "categories": [
+      "Other"
+  ],
+  "activationEvents": [
+      "onCommand:extension.viewAsAscii"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+      "commands": [
+          {
+              "command": "extension.viewAsAscii",
+              "title": "View Project Structure as ASCII"
+          }
+      ]
+  },
+  "devDependencies": {
+      "typescript": "^4.0.0"
+  },
+  "scripts": {
+      "watch": "tsc -w",
+      "compile": "tsc"
+  }
+}
